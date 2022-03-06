@@ -16,6 +16,8 @@
 		745F40CC27BED56E007CDC2E /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745F40CB27BED56E007CDC2E /* FeedItemsMapper.swift */; };
 		747FB48727B82EB800373370 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747FB48627B82EB800373370 /* RemoteFeedLoader.swift */; };
 		74A4348027D3E9260036F7B7 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A4347F27D3E9260036F7B7 /* CacheFeedUseCaseTests.swift */; };
+		74A4349127D4DA1E0036F7B7 /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A4349027D4DA1E0036F7B7 /* LocalFeedLoader.swift */; };
+		74A4349327D4DA690036F7B7 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A4349227D4DA690036F7B7 /* FeedStore.swift */; };
 		74C92FB327CA633D0098227C /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C92FB227CA633D0098227C /* URLSessionHTTPClient.swift */; };
 		74E7CD1727B7C0D60026FB06 /* EssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = 74E7CD1627B7C0D60026FB06 /* EssentialFeed.docc */; };
 		74E7CD1D27B7C0D70026FB06 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E7CD1227B7C0D60026FB06 /* EssentialFeed.framework */; };
@@ -51,6 +53,8 @@
 		745F40CB27BED56E007CDC2E /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		747FB48627B82EB800373370 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		74A4347F27D3E9260036F7B7 /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
+		74A4349027D4DA1E0036F7B7 /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
+		74A4349227D4DA690036F7B7 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		74C92FB227CA633D0098227C /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		74E7CD1227B7C0D60026FB06 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E7CD1527B7C0D60026FB06 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
@@ -132,6 +136,15 @@
 			name = "Feed Cache";
 			sourceTree = "<group>";
 		};
+		74A4348F27D4DA0B0036F7B7 /* Feed Cache */ = {
+			isa = PBXGroup;
+			children = (
+				74A4349027D4DA1E0036F7B7 /* LocalFeedLoader.swift */,
+				74A4349227D4DA690036F7B7 /* FeedStore.swift */,
+			);
+			path = "Feed Cache";
+			sourceTree = "<group>";
+		};
 		74E7CD0827B7C0D60026FB06 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 			children = (
 				74E7CD1527B7C0D60026FB06 /* EssentialFeed.h */,
 				74E7CD1627B7C0D60026FB06 /* EssentialFeed.docc */,
+				74A4348F27D4DA0B0036F7B7 /* Feed Cache */,
 				74E7CD3027B7C2970026FB06 /* Fead Feature */,
 				747FB48527B82E9900373370 /* Fead API */,
 			);
@@ -329,12 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A4349327D4DA690036F7B7 /* FeedStore.swift in Sources */,
 				74C92FB327CA633D0098227C /* URLSessionHTTPClient.swift in Sources */,
 				747FB48727B82EB800373370 /* RemoteFeedLoader.swift in Sources */,
 				745F40CA27BED545007CDC2E /* HTTPClient.swift in Sources */,
 				74E7CD2F27B7C1BF0026FB06 /* FeedLoader.swift in Sources */,
 				745F40CC27BED56E007CDC2E /* FeedItemsMapper.swift in Sources */,
 				74E7CD2D27B7C1010026FB06 /* FeedItem.swift in Sources */,
+				74A4349127D4DA1E0036F7B7 /* LocalFeedLoader.swift in Sources */,
 				74E7CD1727B7C0D60026FB06 /* EssentialFeed.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
