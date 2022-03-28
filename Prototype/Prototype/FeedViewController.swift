@@ -14,11 +14,24 @@ struct FeedImageViewModel {
 }
 
 class FeedViewController: UITableViewController {
-    private let feed = FeedImageViewModel.prototypeFeed
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private var feed = [FeedImageViewModel]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        refresh()
+        tableView.setContentOffset(CGPoint(x: 0, y: -tableView.contentInset.top), animated: false)
+    }
+    
+    @IBAction func refresh() {
+        refreshControl?.beginRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
+            if feed.isEmpty {
+                feed = FeedImageViewModel.prototypeFeed
+                tableView.reloadData()
+            }
+            refreshControl?.endRefreshing()
+        }
     }
 
     // MARK: - Table view data source & delegate
