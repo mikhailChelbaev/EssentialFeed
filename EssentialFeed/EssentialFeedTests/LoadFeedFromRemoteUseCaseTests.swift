@@ -9,7 +9,7 @@ import XCTest
 import EssentialFeed
 
 class LoadFeedFromRemoteUseCaseTests: XCTestCase {
-
+    
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
         
@@ -68,7 +68,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     func test_load_deliversErrorOn200HTTPResponseWithEmptyJSONList() {
         let (sut, client) = makeSUT()
-
+        
         expect(sut, toCompleteWith: .success([]), when: {
             let emptyListJSON = makeItemsJSON([])
             client.complete(withStatusCode: 200, data: emptyListJSON)
@@ -164,14 +164,19 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     }
     
     private final class HTTPClientSpy: HTTPClient {
+        private struct Task: HTTPClientTask {
+            func cancel() {}
+        }
+        
         private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
         
         var requestedURLs: [URL] {
             messages.map { $0.url }
-        }        
+        }
         
-        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
             messages.append((url, completion))
+            return Task()
         }
         
         func complete(with error: Error, at index: Int = 0) {
@@ -186,5 +191,5 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
             messages[index].completion(.success((data, response)))
         }
     }
-
+    
 }
