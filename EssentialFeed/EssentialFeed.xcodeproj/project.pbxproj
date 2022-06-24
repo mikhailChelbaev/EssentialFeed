@@ -305,13 +305,6 @@
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
 		};
-		7420DF8A27F1A38700B37F52 /* EssentialFeediOSTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EssentialFeediOSTests;
-			sourceTree = "<group>";
-		};
 		7420DF9627F1BD8500B37F52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,7 +468,6 @@
 				7450582A27CF649D0016D126 /* EssentialFeedAPIEndToEndTests */,
 				7443457727EE3AEA007E645A /* EssentialFeedCacheIntegrationTests */,
 				7420DF8027F1A38700B37F52 /* EssentialFeediOS */,
-				7420DF8A27F1A38700B37F52 /* EssentialFeediOSTests */,
 				74E7CD1327B7C0D60026FB06 /* Products */,
 				7420DF9627F1BD8500B37F52 /* Frameworks */,
 			);
