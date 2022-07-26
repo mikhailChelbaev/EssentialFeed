@@ -10,40 +10,6 @@ import EssentialFeed
 
 class LoadImageCommentsFromRemoteUseCase: XCTestCase {
     
-    func test_init_doesNotRequestDataFromURL() {
-        let (_, client) = makeSUT()
-        
-        XCTAssertTrue(client.requestedURLs.isEmpty)
-    }
-    
-    func test_load_requestsDataFromURL() {
-        let url = URL(string: "https://a-given-url.com")!
-        let (sut, client) = makeSUT(url: url)
-        
-        sut.load() { _ in }
-        
-        XCTAssertEqual(client.requestedURLs, [url])
-    }
-    
-    func test_loadTwice_requestsDataFromURL() {
-        let url = URL(string: "https://a-given-url.com")!
-        let (sut, client) = makeSUT(url: url)
-        
-        sut.load() { _ in }
-        sut.load() { _ in }
-        
-        XCTAssertEqual(client.requestedURLs, [url, url])
-    }
-    
-    func test_load_deliversErrorOnClientError() {
-        let (sut, client) = makeSUT()
-        
-        expect(sut, toCompleteWith: failure(.connectivity)) {
-            let clientError = NSError(domain: "some error", code: 0)
-            client.complete(with: clientError)
-        }
-    }
-    
     func test_load_deliversErrorOnNon2xxHTTPResponse() {
         let (sut, client) = makeSUT()
         
@@ -80,33 +46,6 @@ class LoadImageCommentsFromRemoteUseCase: XCTestCase {
                 let emptyListJSON = makeItemsJSON([])
                 client.complete(withStatusCode: code, data: emptyListJSON, at: index)
             })
-        }
-    }
-    
-    func test_load_deliversItemsOn2xxHTTPResponseWithJSONItems() {
-        let (sut, client) = makeSUT()
-        
-        let item1 = makeItem(
-            id: UUID(),
-            message: "a message",
-            createdAt: (Date(timeIntervalSince1970: 1598627222), "2020-08-28T15:07:02+00:00"),
-            username: "a username")
-        
-        let item2 = makeItem(
-            id: UUID(),
-            message: "a message",
-            createdAt: (Date(timeIntervalSince1970: 1577881882), "2020-01-01T12:31:22+00:00"),
-            username: "a username")
-        
-        let items = [item1.model, item2.model]
-        
-        let samples = [200, 201, 250, 280, 299]
-        
-        samples.enumerated().forEach { index, code in
-            expect(sut, toCompleteWith: .success(items)) {
-                let json = makeItemsJSON([item1.json, item2.json])
-                client.complete(withStatusCode: code, data: json, at: index)
-            }
         }
     }
     
