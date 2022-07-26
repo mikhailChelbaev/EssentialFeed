@@ -392,7 +392,6 @@
 			children = (
 				74E7CD3327B7D58E0026FB06 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				741BA1C928074BB1000B3C80 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				74B26CD5288F371A00F8B89A /* LoadImageCommentsFromRemoteUseCase.swift */,
 			);
 			name = "Feed API";
 			sourceTree = "<group>";
@@ -405,8 +404,6 @@
 				745F40CB27BED56E007CDC2E /* FeedItemsMapper.swift */,
 				74AC2EE427D76DAD009711C4 /* RemoteFeedItem.swift */,
 				741BA1CF28075FF7000B3C80 /* RemoteFeedImageDataLoader.swift */,
-				74B26CD7288F37A500F8B89A /* RemoteImageCommentsLoader.swift */,
-				74B26CD9288F384700F8B89A /* ImageCommentsMapper.swift */,
 			);
 			path = "Fead API";
 			sourceTree = "<group>";
@@ -508,6 +505,23 @@
 			name = "Shared API Infra";
 			sourceTree = "<group>";
 		};
+		74B26CE328907C5E00F8B89A /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				74B26CD7288F37A500F8B89A /* RemoteImageCommentsLoader.swift */,
+				74B26CD9288F384700F8B89A /* ImageCommentsMapper.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		74B26CE428907C9B00F8B89A /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				74B26CD5288F371A00F8B89A /* LoadImageCommentsFromRemoteUseCase.swift */,
+			);
+			name = "Image Comments API";
+			sourceTree = "<group>";
+		};
 		74B7C2742804275300925D60 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +593,7 @@
 				74B26CDE28907B0800F8B89A /* Shared API */,
 				74B26CDF28907B2700F8B89A /* Shared API Infra */,
 				74B26CDD288F3D1400F8B89A /* Image Comments Feature */,
+				74B26CE328907C5E00F8B89A /* Image Comments API */,
 				74A4348F27D4DA0B0036F7B7 /* Feed Cache */,
 				74E7CD3027B7C2970026FB06 /* Fead Feature */,
 				747FB48527B82E9900373370 /* Fead API */,
@@ -593,8 +608,9 @@
 				7444F86D27C941EC0094891B /* Helpers */,
 				74B26CE028907B7700F8B89A /* Shared API */,
 				74B26CE228907BC000F8B89A /* Shared API Infra */,
-				74A4347E27D3E9080036F7B7 /* Feed Cache */,
+				74B26CE428907C9B00F8B89A /* Image Comments API */,
 				745F40CD27BED9DF007CDC2E /* Feed API */,
+				74A4347E27D3E9080036F7B7 /* Feed Cache */,
 				74B7C2792804292400925D60 /* Feed Presentation */,
 			);
 			path = EssentialFeedTests;
