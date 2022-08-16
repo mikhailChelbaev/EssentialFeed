@@ -1,2 +1,2 @@
 "FEED_VIEW_TITLE" = "Моя Лента";
-"FEED_VIEW_CONNECTION_ERROR" = "Не удалось подключиться к серверу";
+"GENERIC_CONNECTION_ERROR" = "Не удалось подключиться к серверу";
