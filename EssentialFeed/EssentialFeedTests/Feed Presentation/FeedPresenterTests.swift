@@ -43,7 +43,7 @@ class FeedPresenterTests: XCTestCase {
         ])
     }
     
-    func test_didFinishLoadingFeed_displaysLocalizedErrorMessageAndStopsLoading() {
+    func test_didFinishLoadingFeedWithError_displaysLocalizedErrorMessageAndStopsLoading() {
         let (sut, view) = makeSUT()
         
         sut.didFinishLoadingFeed(with: anyNSError())
