@@ -11,7 +11,7 @@ import EssentialFeediOS
 
 extension FeedUIIntegrationTests {
 
-    func assertThat(_ sut: FeedViewController, isRendering feed: [FeedImage], file: StaticString = #file, line: UInt = #line) throws {
+    func assertThat(_ sut: ListViewController, isRendering feed: [FeedImage], file: StaticString = #file, line: UInt = #line) throws {
         sut.view.enforceLayoutCycle()
         
         guard sut.numberOfRenderedFeedImageViews() == feed.count else {
@@ -23,7 +23,7 @@ extension FeedUIIntegrationTests {
         }
     }
     
-    func assertThat(_ sut: FeedViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) throws {
+    func assertThat(_ sut: ListViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) throws {
         let cell = try XCTUnwrap(sut.feedImageView(at: index) as? FeedImageCell)
         
         let shouldLocationBeVisible = (image.location != nil)
