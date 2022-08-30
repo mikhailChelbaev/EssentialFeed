@@ -32,7 +32,7 @@
                                             <rect key="frame" x="16" y="6" width="382" height="568"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="dLV-HZ-Vx1" userLabel="Location Container">
-                                                    <rect key="frame" x="0.0" y="0.0" width="181" height="51"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IM-IK-COQ" userLabel="Pin Container">
                                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
@@ -51,19 +51,19 @@
                                                                 <constraint firstItem="9yg-sx-mIh" firstAttribute="top" secondItem="8IM-IK-COQ" secondAttribute="top" constant="3" id="rHd-d6-sTc"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="syb-Ad-ZwR">
-                                                            <rect key="frame" x="6" y="0.0" width="63" height="36"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="syb-Ad-ZwR">
+                                                            <rect key="frame" x="6" y="0.0" width="52" height="30.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <string key="text">Location,
 Location</string>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" systemColor="secondaryLabelColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbS-Uf-pnE" userLabel="Image Container">
-                                                    <rect key="frame" x="0.0" y="61" width="382" height="382"/>
+                                                    <rect key="frame" x="0.0" y="64" width="382" height="382"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sAl-IL-0p2">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="382"/>
@@ -100,8 +100,8 @@ Location</string>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkt-Rg-YsE">
-                                                    <rect key="frame" x="0.0" y="453" width="169" height="115"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkt-Rg-YsE">
+                                                    <rect key="frame" x="0.0" y="456" width="382" height="112"/>
                                                     <string key="text">Description Description
 Description Description
 Description Description
@@ -114,14 +114,16 @@ Description Description
 Description Description
 Description Description
 Description Description</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dLV-HZ-Vx1" firstAttribute="width" secondItem="zY3-i5-uYC" secondAttribute="width" multiplier="0.47343" id="2n6-cu-WKh"/>
-                                                <constraint firstItem="kkt-Rg-YsE" firstAttribute="width" secondItem="zY3-i5-uYC" secondAttribute="width" multiplier="0.442029" id="Zdo-JY-MFJ"/>
+                                                <constraint firstItem="kkt-Rg-YsE" firstAttribute="leading" secondItem="zY3-i5-uYC" secondAttribute="leading" id="GPe-Mz-6br"/>
+                                                <constraint firstItem="dLV-HZ-Vx1" firstAttribute="leading" secondItem="zY3-i5-uYC" secondAttribute="leading" id="hOA-7M-C6h"/>
+                                                <constraint firstAttribute="trailing" secondItem="dLV-HZ-Vx1" secondAttribute="trailing" id="jIK-uT-1K0"/>
+                                                <constraint firstAttribute="trailing" secondItem="kkt-Rg-YsE" secondAttribute="trailing" id="qrG-FB-Ctu"/>
                                                 <constraint firstItem="RbS-Uf-pnE" firstAttribute="width" secondItem="zY3-i5-uYC" secondAttribute="width" id="zEU-JM-t7q"/>
                                             </constraints>
                                         </stackView>
