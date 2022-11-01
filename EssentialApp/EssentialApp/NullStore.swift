@@ -8,12 +8,12 @@
 import Foundation
 import EssentialFeed
 
-class NullStore: FeedStore {
+class NullStore: FeedStore {    
     func deleteCachedFeed() throws {}
     
     func insert(_ feed: [EssentialFeed.LocalFeedImage], timestamp: Date) throws {}
     
-    func retrieve() throws -> FeedCache? { .none }
+    func retrieve() throws -> CachedFeed? { .none }
 }
 
 extension NullStore: FeedImageDataStore {
